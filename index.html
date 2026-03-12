@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Miss Ayesha Sorry</title>
+
+<style>
+
+body{
+background:black;
+color:red;
+font-family:monospace;
+white-space:pre;
+font-size:18px;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+#text{
+position:relative;
+z-index:2;
+padding:40px;
+}
+
+/* stars */
+
+.star{
+position:fixed;
+top:-10px;
+width:2px;
+height:2px;
+background:white;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="text"></div>
+
+<script>
+
+let pattern = `
+Miss Ayesha sorry..
+ Miss Ayesha sorry..
+  Miss Ayesha sorry..
+   Miss Ayesha sorry..
+    Miss Ayesha sorry..
+     Miss Ayesha sorry..
+      Miss Ayesha sorry..
+       Miss Ayesha sorry..
+        Miss Ayesha sorry..
+       Miss Ayesha sorry..
+      Miss Ayesha sorry..
+     Miss Ayesha sorry..
+    Miss Ayesha sorry..
+   Miss Ayesha sorry..
+  Miss Ayesha sorry..
+ Miss Ayesha sorry..
+Miss Ayesha sorry..
+
+Miss Ayesha Sorry..
+iss Ayesha Sorry..M
+ss Ayesha Sorry..Mi
+s Ayesha Sorry..Mis
+ Ayesha Sorry..Miss
+Ayesha Sorry..Miss
+yesha Sorry..Miss A
+esha Sorry..Miss Ay
+sha Sorry..Miss Aye
+ha Sorry..Miss Ayes
+a Sorry..Miss Ayesh
+ Sorry..Miss Ayesha
+Sorry..Miss Ayesha
+orry..Miss Ayesha S
+rry..Miss Ayesha So
+ry..Miss Ayesha Sor
+y..Miss Ayesha Sorr
+..Miss Ayesha Sorry
+`;
+
+let container = document.getElementById("text");
+let output="";
+
+for(let i=0;i<70;i++){
+output+=pattern+"\n";
+}
+
+container.textContent=output;
+
+/* create stars rain */
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+star.style.animationDuration=(Math.random()*3+2)+"s";
+star.style.opacity=Math.random();
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
